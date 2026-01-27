@@ -9,114 +9,111 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
+* {
+  box-sizing: border-box;
+}
 
-  <style>
-    * {
-      box-sizing: border-box;
-    }
+body {
+  margin: 0;
+  font-family: "Open Sans", system-ui, sans-serif;
+  background: #ffffff;
+  color: #111;
+}
 
-    body {
-      margin: 0;
-      font-family: "Open Sans", system-ui, sans-serif;
-      background: #ffffff;
-      color: #111;
-    }
+.page {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 40px;
+  max-width: 1200px;
+  padding: 40px;
+  margin: 0 auto;
+}
 
-    .page {
-      display: grid;
-      grid-template-columns: 280px 1fr;
-      gap: 40px;
-      max-width: 1200px;
-      padding: 40px;
-      margin: 0 auto;
-    }
+/* LEFT COLUMN */
+.intro h1 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
 
-    /* LEFT COLUMN */
-    .intro h1 {
-      font-size: 20px;
-      font-weight: 600;
-      margin-bottom: 12px;
-    }
+.intro p {
+  font-size: 14px;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 24px;
+}
 
-    .intro p {
-      font-size: 14px;
-      line-height: 1.6;
-      color: #555;
-      margin-bottom: 24px;
-    }
+/* RIGHT COLUMN GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  align-items: stretch; /* ensures cards in same row have equal height */
+  grid-auto-rows: 1fr;
 
-    /* RIGHT COLUMN GRID */
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
-    }
+}
 
-    .card {
-      background: #f6f6f6;
-      padding: 20px;
-      border-radius: 4px;
-      min-height: 160px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
+.card {
+  background: #f6f6f6;
+  padding: 20px;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%; /* makes flex item fill the grid cell */
+}
 
-    .card h2 {
-      font-size: 15px;
-      font-weight: 600;
-      margin: 4px 0 6px 0;
-    }
+.card h2 {
+  font-size: 15px;
+  font-weight: 600;
+  margin: 4px 0 6px 0;
+}
 
-    .card .role {
-      font-size: 13px;
-      color: #666;
-      margin-bottom: 12px;
-    }
+.card .role {
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 12px;
+}
 
-    .card .links a {
-      font-size: 13px;
-      color: #111;
-      text-decoration: none;
-      margin-right: 12px;
-      border-bottom: 1px solid rgba(0,0,0,0.3);
-    }
+.card .links a {
+  font-size: 13px;
+  color: #111;
+  text-decoration: none;
+  margin-right: 12px;
+  border-bottom: 1px solid rgba(0,0,0,0.3);
+}
 
-    .card .links a:hover {
-      border-bottom-color: #000;
-    }
+.card .links a:hover {
+  border-bottom-color: #000;
+}
 
-    .card img {
+.card img {
   width: 100%;
   aspect-ratio: 1 / 1;
   object-fit: cover;
   border-radius: 3px;
   margin-bottom: 14px;
   background: #eaeaea;
+  flex-shrink: 0; /* prevents image from shrinking */
 }
 
-    /* RESPONSIVE */
-    @media (max-width: 900px) {
-      .page {
-        grid-template-columns: 1fr;
-      }
+/* RESPONSIVE */
+@media (max-width: 900px) {
+  .page {
+    grid-template-columns: 1fr;
+  }
 
-      .grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
 
-    @media (max-width: 600px) {
-      .grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
-</head>
-
-<body>
-  <div class="page">
-
+@media (max-width: 600px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+  
     <!-- LEFT -->
    <div class="card">
   <img src="images/AlexTran.jpg" alt="Alex Tran">
