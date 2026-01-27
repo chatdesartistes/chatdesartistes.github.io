@@ -11,202 +11,148 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
 
   <style>
-  * {
-  box-sizing: border-box;
-}
+    * {
+      box-sizing: border-box;
+    }
 
-body {
-  margin: 0;
-  font-family: "Open Sans", system-ui, sans-serif;
-  background: #ffffff;
-  color: #111;
-}
+    body {
+      margin: 0;
+      font-family: "Open Sans", system-ui, sans-serif;
+      background: #ffffff;
+      color: #111;
+    }
 
-.page {
-  display: grid;
-  grid-template-columns: 280px 1fr;
-  gap: 40px;
-  max-width: 1200px;
-  padding: 40px;
-  margin: 0 auto;
-}
+    .page {
+      display: grid;
+      grid-template-columns: 280px 1fr;
+      gap: 40px;
+      max-width: 1200px;
+      padding: 40px;
+      margin: 0 auto;
+    }
 
-/* LEFT COLUMN */
-.intro h1 {
-  font-size: 20px;
-  font-weight: 600;
-  margin-bottom: 12px;
-}
+    /* LEFT COLUMN */
+    .intro h1 {
+      font-size: 20px;
+      font-weight: 600;
+      margin-bottom: 12px;
+    }
 
-.intro p {
-  font-size: 14px;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 24px;
-}
+    .intro p {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #555;
+      margin-bottom: 24px;
+    }
 
-/* RIGHT COLUMN GRID */
-.grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 24px;
-  align-items: stretch; /* ensures cards in same row have equal height */
-  grid-auto-rows: 1fr;
+    /* RIGHT COLUMN GRID */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
 
-}
+    .card {
+      background: #f5f5f5;
+      padding: 20px;
+      border-radius: 4px;
+      min-height: 160px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
 
-.card {
-  background: #f6f6f6;
-  padding: 20px;
-  border-radius: 4px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  height: 100%; /* makes flex item fill the grid cell */
-}
+    .card h2 {
+      font-size: 15px;
+      font-weight: 600;
+      margin: 0 0 6px 0;
+    }
 
-.card h2 {
-  font-size: 15px;
-  font-weight: 600;
-  margin: 4px 0 6px 0;
-}
+    .card .role {
+      font-size: 13px;
+      color: #666;
+      margin-bottom: 12px;
+    }
 
-.card .role {
-  font-size: 13px;
-  color: #666;
-  margin-bottom: 12px;
-}
+    .card .links a {
+      font-size: 13px;
+      color: #111;
+      text-decoration: none;
+      margin-right: 12px;
+      border-bottom: 1px solid rgba(0,0,0,0.3);
+    }
 
-.card .links a {
-  font-size: 13px;
-  color: #111;
-  text-decoration: none;
-  margin-right: 12px;
-  border-bottom: 1px solid rgba(0,0,0,0.3);
-}
+    .card .links a:hover {
+      border-bottom-color: #000;
+    }
 
-.card .links a:hover {
-  border-bottom-color: #000;
-}
+    /* RESPONSIVE */
+    @media (max-width: 900px) {
+      .page {
+        grid-template-columns: 1fr;
+      }
 
-.card img {
-  width: 400px;
-  aspect-ratio: 1 / 1;
-  object-fit: cover;
-  border-radius: 3px;
-  margin-bottom: 14px;
-  background: #eaeaea;
-  flex-shrink: 0; /* prevents image from shrinking */
-}
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
 
-/* RESPONSIVE */
-@media (max-width: 900px) {
-  .page {
-    grid-template-columns: 1fr;
-  }
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
 
-  .grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-}
+<body>
+  <div class="page">
 
-@media (max-width: 600px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-    </style> </head> 
-  <body> <div class="page">
-  
     <!-- LEFT -->
-   <div class="card">
-  <img src="images/AlexTran.jpg" alt="Alex Tran">
+    <div class="intro">
+      <h1>Le Chat des Artistes</h1>
+      <p>
+        A shared building for artists and creatives.
+        Painters, photographers, designers, writers, and researchers
+        working side by side.
+      </p>
+    </div>
 
-  <div>
-    <h2>Alex Tran — 307</h2>
-    <div class="role">Photographe, artiste visuel</div>
-  </div>
-
-  <div class="links">
-    <a href="http://alextranphotography.com">Site Web 1</a>
-    <a href="http://alextran.ca">Site Web 2</a>
-    <a href="http://instagram.com/al.xtran">Instagram</a>
-  </div>
-</div>
-
-    
-  
-<div class="card">
-  <img src="images/Valentine.jpg" alt="Valentine">
-
-  <div>
-    <h2>Valentine Alma — 211</h2>
-    <div class="role">Artiste visuelle</div>
-  </div>
-
-  <div class="links">
-    <a href="#">Website</a>
-    <a href="#">Instagram</a>
-  </div>
-</div>
-            
-<div class="card">
-  <img src="images/Parceline.jpg" alt="Parceline">
-
-  <div>
-    <h2>Parcéline Céramique — 312</h2>
-    <div class="role">Céramiste</div>
-  </div>
-
-  <div class="links">
-    <a href="#">Website</a>
-    <a href="#">Instagram</a>
-  </div>
-</div>
-
-    <div class="card">
-  <img src="images/Feuilles.jpg" alt="Feuilles">
-
-  <div>
-    <h2>Feuilles — 204</h2>
-    <div class="role">Photographer</div>
-  </div>
-
-  <div class="links">
-    <a href="#">Website</a>
-    <a href="#">Instagram</a>
-  </div>
-</div>
-
-    
-    <div class="card">
-  <img src="images/JulieDesmarais.jpg" alt="JulieDesmarais">
-
-  <div>
-    <h2>Julie Desmarais — 207</h2>
-    <div class="role">Artiste peintre</div>
-  </div>
-
-  <div class="links">
-    <a href="#">Website</a>
-    <a href="#">Instagram</a>
-  </div>
-</div>
+    <!-- RIGHT -->
+    <div class="grid">
 
       <div class="card">
-  <img src="images/Keenan.jpg" alt="Keenan">
+        <div>
+          <h2>Artist Name</h2>
+          <div class="role">Photographer</div>
+        </div>
+        <div class="links">
+          <a href="#">Website</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
 
-  <div>
-    <h2>Keenan — 107</h2>
-    <div class="role">Relieur</div>
-  </div>
+      <div class="card">
+        <div>
+          <h2>Studio XYZ</h2>
+          <div class="role">Illustration & Design</div>
+        </div>
+        <div class="links">
+          <a href="#">Website</a>
+          <a href="#">Instagram</a>
+        </div>
+      </div>
 
-  <div class="links">
-    <a href="#">Website</a>
-    <a href="#">Instagram</a>
-  </div>
-</div>
+      <div class="card">
+        <div>
+          <h2>Resident Name</h2>
+          <div class="role">Writer</div>
+        </div>
+        <div class="links">
+          <a href="#">Website</a>
+        </div>
+      </div>
+
       <!-- Duplicate cards as needed -->
 
     </div>
