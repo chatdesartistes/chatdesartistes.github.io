@@ -86,6 +86,15 @@
       border-bottom-color: #000;
     }
 
+    .card img {
+  width: 100%;           /* fills card width */
+  max-width: 400px;      /* caps the width */
+  height: auto;          /* keeps aspect ratio */
+  border-radius: 4px;
+  margin-bottom: 12px;   /* space between image and text */
+  align-self: center;    /* centers image if card is wider than image */
+}
+
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .page {
@@ -120,6 +129,21 @@
 
     <!-- RIGHT -->
     <div class="grid">
+
+      <div class="card">
+  <img src="images/AlexTran.jpg" alt="AlexT ran">
+  <div>
+    <h2>Alex Tran</h2>
+    <div class="role">Photographe</div>
+  </div>
+  <div class="links">
+    <a href="http://alextranphotography.com">Site Web (Portraits)</a>
+        <a href="http://alextran.ca">Site Web (Art)</a>
+
+              <a href="http://instagram.com/al.xtran">Instagram</a>
+
+  </div>
+</div>
 
       <div class="card">
         <div>
