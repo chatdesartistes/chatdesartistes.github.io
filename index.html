@@ -51,9 +51,11 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
-      align-items: stretch;  /* stretch all cards in the row to equal height */
-    }
+      /*  former iteration instead of following row: align-items: stretch;  stretch all cards in the row to equal height */
+      grid-auto-rows: 1fr;   /* all rows same height */
 
+    }
+    
     .card {
       background: #f5f5f5;
       padding: 20px;
