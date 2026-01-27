@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Le Chat des artistes</title>
+  <title>Le Chat des Artistes</title>
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
   <!-- Open Sans -->
@@ -22,6 +22,7 @@
       color: #111;
     }
 
+    /* PAGE GRID */
     .page {
       display: grid;
       grid-template-columns: 280px 1fr;
@@ -50,16 +51,28 @@
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
+      align-items: stretch;  /* stretch all cards in the row to equal height */
     }
 
     .card {
       background: #f5f5f5;
       padding: 20px;
       border-radius: 4px;
-      min-height: 160px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      height: 100%;  /* fill grid cell */
+    }
+
+    /* CARD CONTENT */
+    .card img {
+      width: 100%;          /* fills card width */
+      max-width: 400px;     /* cap image width */
+      height: auto;         /* maintain aspect ratio */
+      border-radius: 4px;
+      margin-bottom: 12px;
+      align-self: center;   /* center image in card */
+      flex-shrink: 0;       /* prevent image shrinking */
     }
 
     .card h2 {
@@ -80,27 +93,20 @@
       text-decoration: none;
       margin-right: 12px;
       border-bottom: 1px solid rgba(0,0,0,0.3);
+      display: inline-block;
+      word-break: break-word;  /* prevent overflow on long links */
+      max-width: 100%;
     }
 
     .card .links a:hover {
       border-bottom-color: #000;
     }
 
-    .card img {
-  width: 100%;           /* fills card width */
-  max-width: 400px;      /* caps the width */
-  height: auto;          /* keeps aspect ratio */
-  border-radius: 4px;
-  margin-bottom: 12px;   /* space between image and text */
-  align-self: center;    /* centers image if card is wider than image */
-}
-
     /* RESPONSIVE */
     @media (max-width: 900px) {
       .page {
         grid-template-columns: 1fr;
       }
-
       .grid {
         grid-template-columns: repeat(2, 1fr);
       }
@@ -117,35 +123,33 @@
 <body>
   <div class="page">
 
-    <!-- LEFT -->
+    <!-- LEFT COLUMN -->
     <div class="intro">
-      <h1>Le Chat des artistes</h1>
+      <h1>Le Chat des Artistes</h1>
       <p>
-   Communauté regroupant 46 ateliers d'artistes, artisans et organismes culturels.
+        Communauté regroupant 46 ateliers d'artistes, artisans et organismes culturels.
       </p>
     </div>
 
-    <!-- RIGHT -->
+    <!-- RIGHT COLUMN -->
     <div class="grid">
 
       <div class="card">
-  <img src="images/AlexTran.jpg" alt="Alex Tran">
-  <div>
-    <h2>Alex Tran - 307</h2>
-    <div class="role">Photographe</div>
-  </div>
-  <div class="links">
-    <a href="http://alextranphotography.com">Site Web (Portraits)</a>
-        <a href="http://alextran.ca">Site Web (Art)</a>
-
-              <a href="http://instagram.com/al.xtran">Instagram</a>
-
-  </div>
-</div>
+        <img src="images/AlexTran.jpg" alt="Alex Tran">
+        <div>
+          <h2>Alex Tran — 307</h2>
+          <div class="role">Photographe</div>
+        </div>
+        <div class="links">
+          <a href="http://alextranphotography.com">Site Web (Portraits)</a>
+          <a href="http://alextran.ca">Site Web (Art)</a>
+          <a href="http://instagram.com/al.xtran">Instagram</a>
+        </div>
+      </div>
 
       <div class="card">
-  <img src="images/Parceline.jpg" alt="Parceline">
-  <div>
+        <img src="images/Parceline.jpg" alt="Parcéline">
+        <div>
           <h2>Parcéline — 311</h2>
           <div class="role">Céramiste</div>
         </div>
@@ -156,8 +160,8 @@
       </div>
 
       <div class="card">
-  <img src="images/Feuilles.jpg" alt="Feuilles">
-  <div>
+        <img src="images/Feuilles.jpg" alt="Feuilles">
+        <div>
           <h2>Feuilles — 206</h2>
           <div class="role">Relieure</div>
         </div>
@@ -168,8 +172,8 @@
       </div>
 
       <div class="card">
-  <img src="images/Valentine.jpg" alt="Valentine">
-  <div>
+        <img src="images/Valentine.jpg" alt="Valentine">
+        <div>
           <h2>Valentine — 210</h2>
           <div class="role">Artiste visuelle</div>
         </div>
@@ -179,10 +183,9 @@
         </div>
       </div>
 
-      
       <div class="card">
-  <img src="images/JulieDesmarais.jpg" alt="JulieDesmarais">
-  <div>
+        <img src="images/JulieDesmarais.jpg" alt="Julie Desmarais">
+        <div>
           <h2>Julie Desmarais — 207</h2>
           <div class="role">Artiste peintre</div>
         </div>
@@ -192,8 +195,7 @@
         </div>
       </div>
 
-
-      <!-- Duplicate cards as needed -->
+      <!-- Add more cards here -->
 
     </div>
   </div>
